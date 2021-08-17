@@ -2,8 +2,8 @@ const { ApolloServer } = require('apollo-server-fastify');
 const { typeDefs, resolvers } = require('./apollo.js');
 const path = require('path');
 const fastify = require('fastify');
-const svelteApp = require(path.join(__dirname, '../build/server/App.js'));
-const manifest = require(path.join(__dirname, '../build/client/manifest.json'));
+const svelteApp = require(path.join(__dirname, '../ssr/server/App.js'));
+const manifest = require(path.join(__dirname, '../ssr/client/manifest.json'));
 
 async function startApolloServer() {
   const server = new ApolloServer({ typeDefs, resolvers });
@@ -12,7 +12,7 @@ async function startApolloServer() {
   await app.register(require('fastify-express'));
   app.register(server.createHandler());
   app.register(require('fastify-static'), {
-    root: path.join(__dirname, '../build/client/assets'),
+    root: path.join(__dirname, '../ssr/client/assets'),
     prefix: '/assets/',
   });
   app.get('*', async (request, reply) => {

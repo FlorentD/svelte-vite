@@ -5,8 +5,8 @@
     "netlify": "netlify dev",
     "dev": "vite",
     "build": "vite build",
-    "build:client": "vite build --outDir build/client",
-    "build:server": "vite build --outDir build/server --ssr src/App.svelte",
+    "build:client": "vite build --outDir ssr/client",
+    "build:server": "vite build --outDir ssr/server --ssr src/App.svelte",
     "dist": "npm run build:client && npm run build:server",
     "serve": "vite preview"
   },
@@ -19,6 +19,7 @@
     "svelte-routing": "1.6.0"
   },
   "devDependencies": {
+    "@sveltejs/adapter-netlify": "1.0.0-next.27",
     "@sveltejs/vite-plugin-svelte": "1.0.0-next.17",
     "autoprefixer": "10.3.1",
     "postcss": "8.3.6",
