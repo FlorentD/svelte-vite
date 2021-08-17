@@ -1,6 +1,7 @@
 {
   "name": "svelte-vite",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "netlify": "netlify dev",
     "dev": "vite",
