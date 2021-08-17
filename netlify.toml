@@ -2,7 +2,3 @@
 from = '/*'
 status = 200
 to = '/index.html'
-[build]
-command = "npm run build"
-publish = "build/publish/"
-functions = "build/functions/"
