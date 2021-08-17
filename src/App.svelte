@@ -11,7 +11,7 @@
   let url = '';
 
   const client = new ApolloClient({
-    uri: '/.netlify/functions/graphql',
+    uri: '/.netlify/functions/apollo-graphql',
     cache: new InMemoryCache(),
   });
   setClient(client);
