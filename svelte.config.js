@@ -1,6 +1,6 @@
-import adapter from '@sveltejs/adapter-netlify';
+const adapter = require('@sveltejs/adapter-netlify');
 
-export default {
+module.exports = {
   kit: {
     adapter: adapter(), // currently the adapter does not take any options
     target: '#svelte',
