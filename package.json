@@ -4,10 +4,17 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:client": "vite build --outDir build/client",
+    "build:server": "vite build --outDir build/server --ssr src/App.svelte",
+    "dist": "npm run build:client && npm run build:server",
     "serve": "vite preview"
   },
   "dependencies": {
+    "@apollo/client": "3.4.8",
+    "apollo-server-lambda": "2.25.2",
+    "graphql": "14.7.0",
     "svelte": "3.42.1",
+    "svelte-apollo": "0.4.0",
     "svelte-routing": "1.6.0"
   },
   "devDependencies": {
